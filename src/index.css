@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/inter/latin-700.css';
+@import '@fontsource/inter/latin-ext-400.css';
+@import '@fontsource/inter/latin-ext-500.css';
+@import '@fontsource/inter/latin-ext-600.css';
+@import '@fontsource/inter/latin-ext-700.css';
+@import '@fontsource/lora/latin-500.css';
+@import '@fontsource/lora/latin-600.css';
+@import '@fontsource/lora/latin-700.css';
+@import '@fontsource/lora/latin-ext-500.css';
+@import '@fontsource/lora/latin-ext-600.css';
+@import '@fontsource/lora/latin-ext-700.css';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', ui-serif, Georgia, serif;
+
+  --color-lieme-burgundy: #8b2f2a;
+  --color-lieme-burgundy-dark: #6e2521;
+  --color-lieme-cream: #f3eae1;
+  --color-lieme-cream-alt: #eae0d3;
+  --color-lieme-ink: #2b211d;
+  --color-lieme-ink-soft: #5c4f48;
+  --color-lieme-gold: #c79a4b;
+  --color-lieme-success: #3f7a52;
+  --color-lieme-error: #b23a2e;
+}
+
+@layer base {
+  body {
+    @apply bg-lieme-cream text-lieme-ink font-sans antialiased;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-lieme-burgundy) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--color-lieme-burgundy) 45%, transparent);
+    border-radius: 999px;
+    border: 2px solid var(--color-lieme-cream);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, var(--color-lieme-burgundy) 70%, transparent);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.25s ease-out;
+}
